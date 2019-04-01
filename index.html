@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!--Import Materialize Google Icon Font-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!-- Font-Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+      integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+      crossorigin="anonymous"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900"
+      rel="stylesheet"
+    />
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+
+    <style>
+      body {
+        font-family: 'Montserrat', sans-serif;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+      }
+
+      a {
+        color: #bcc6ff !important;
+      }
+      nav ul a:hover {
+        background-color: rgb(188, 198, 255, 0.3);
+      }
+
+      .card a {
+        color: #8c9eff !important;
+      }
+
+      .row {
+        margin: 80px 0px 40px 0px;
+      }
+
+      .card {
+        min-height: 575px;
+      }
+
+      .card .card-title {
+        padding: 10px 0px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 400;
+        color: #bcc6ff;
+        background-color: #1a237e;
+      }
+
+      .card-content {
+        min-height: 115px;
+      }
+    </style>
+
+    <title>Home | Kathy's JS Projects</title>
+  </head>
+
+  <body>
+    <!-- FOR DESKTOP NAV AND THE DROPDOWNS INSIDE -->
+    <ul id="dropdown1" class="dropdown-content">
+      <li><a href="task_list.html">Task List</a></li>
+      <li><a href="trendy_phrases.html">Trendy Phrases</a></li>
+      <!-- <li class="divider"></li>
+      <li><a href="#!">three</a></li> -->
+    </ul>
+    <nav class="indigo darken-4">
+      <div class="container">
+        <div class="nav-wrapper">
+          <a
+            href="index.html"
+            class="brand-logo"
+            style="color: #bcc6ff !important;"
+            >kathycuevas.dev</a
+          >
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"
+            ><i class="material-icons">menu</i></a
+          >
+          <ul class="right hide-on-med-and-down">
+            <!-- Dropdown Trigger -->
+            <li>
+              <a class="dropdown-trigger" href="#!" data-target="dropdown1"
+                >VANILLA JS<i class="material-icons right"
+                  >arrow_drop_down</i
+                ></a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- FOR MOBILE SIDE NAV AND THE DROPDOWNS INSIDE -->
+    <ul id="dropdown2" class="dropdown-content">
+      <li><a href="task_list.html">Task List</a></li>
+      <li><a href="trendy_phrases.html">Trendy Phrases</a></li>
+      <!-- <li class="divider"></li>
+        <li><a href="#!">three</a></li> -->
+    </ul>
+    <ul class="sidenav" id="mobile-demo">
+      <li><a href="index.html">HOME</a></li>
+      <!-- Dropdown Trigger -->
+      <li>
+        <a class="dropdown-trigger" href="#!" data-target="dropdown2"
+          >VANILLA JS<i class="material-icons right">arrow_drop_down</i></a
+        >
+      </li>
+    </ul>
+
+    <div class="container center-align">
+      <div class="row">
+        <div class="col s12 m6">
+          <div class="card">
+            <div class="card-title">Task List</div>
+            <div class="card-action">
+              <a href="task_list.html">Try It</a>
+            </div>
+            <div class="card-action">
+              <a href="https://github.com/meetnerdykat/JS-DOM-Project-TaskList"
+                >Code on GitHub</a
+              >
+            </div>
+            <div class="card-image">
+              <img src="img/task_list.png" />
+            </div>
+            <div class="card-content">
+              <p>
+                A simple task list app where I learned about creating, reading,
+                updating, and deleting DOM elements.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m6">
+          <div class="card">
+            <div class="card-title">Trendy Phrases</div>
+            <div class="card-action">
+              <a href="trendy_phrases.html">Try It</a>
+            </div>
+            <div class="card-action">
+              <a href="https://github.com/meetnerdykat/JS-Trendy-Phrases"
+                >Code on GitHub</a
+              >
+            </div>
+            <div class="card-image">
+              <img src="img/trendy_phrases.png" />
+            </div>
+            <div class="card-content">
+              <p>
+                This one is pretty simple as well but a bit more fun for sure!
+                Can only be done from a desktop or device with keyboard
+                functionality
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script>
+      $(document).ready(function() {
+        // dropdown links in main desktop nav
+        $('.dropdown-trigger').dropdown();
+        // sidenav
+        $('.sidenav').sidenav();
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.card
+  .card-action
+  a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
+  color: #1a237e;
+}
+
+a {
+  color: #bcc6ff !important;
+}
+
+nav ul a:hover {
+  background-color: rgb(188, 198, 255, 0.3);
+}
+
+#task-form > input {
+  color: #bcc6ff !important;
+}

@@ -1,0 +1,76 @@
+html {
+  background: /* linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 174, 255, 0.3)), */ url('../img/lasers.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+a {
+  color: #bcc6ff !important;
+}
+
+nav ul a:hover {
+  background-color: rgb(188, 198, 255, 0.3);
+}
+
+body > nav > div > div > ul > li > a {
+  color: #bcc6ff;
+}
+.message {
+  display: grid;
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(140, 158, 255, 0.9);
+  margin-bottom: 40px;
+}
+.message h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+}
+.keys {
+  display: grid;
+  grid-template-columns: 120px 120px;
+  grid-column-gap: 15px;
+  /* flex: 1; */
+  /* min-height: 100vh; */
+  align-items: center;
+  justify-content: center;
+}
+
+.key {
+  border: 0.2rem solid #fff;
+  border-radius: 0.2rem;
+  margin: 0.5rem;
+  /* font-size: 1.5rem; */
+  /* padding: 1rem 0.5rem; */
+  transition: all 0.25s ease;
+  width: 8rem;
+  text-align: center;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.7);
+  text-shadow: 0 0 0.2rem rgba(255, 0, 221);
+}
+
+.playing {
+  transform: scale(1.1);
+  border-color: rgba(255, 0, 221);
+  box-shadow: 0 0 1rem rgba(255, 0, 221);
+}
+
+kbd {
+  display: block;
+  font-size: 2.5rem;
+  font-family: Sacramento;
+}
+
+.sound {
+  /* font-size: 1.2rem; */
+  /* text-transform: uppercase; */
+  /* letter-spacing: 0.1rem; */
+  color: #fff;
+}
