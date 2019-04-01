@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!--Import Materialize Google Icon Font-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!-- Font-Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+      integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900"
+      rel="stylesheet"
+    />
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+
+    <link rel="stylesheet" href="css/trendy_phrases_style.css" />
+    <title>JS Drum Kit</title>
+  </head>
+  <body>
+    <!-- FOR DESKTOP NAV AND THE DROPDOWNS INSIDE -->
+    <ul id="dropdown1" class="dropdown-content">
+      <li><a href="task_list.html">Task List</a></li>
+      <li><a href="trendy_phrases.html">Trendy Phrases</a></li>
+      <!-- <li class="divider"></li>
+            <li><a href="#!">three</a></li> -->
+    </ul>
+    <nav class="indigo darken-4">
+      <div class="container">
+        <div class="nav-wrapper">
+          <a
+            href="index.html"
+            class="brand-logo"
+            style="color: #bcc6ff !important;"
+            >kathycuevas.dev</a
+          >
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"
+            ><i class="material-icons">menu</i></a
+          >
+          <ul class="right hide-on-med-and-down">
+            <!-- Dropdown Trigger -->
+            <li>
+              <a class="dropdown-trigger" href="#!" data-target="dropdown1"
+                >VANILLA JS<i class="material-icons right"
+                  >arrow_drop_down</i
+                ></a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- FOR MOBILE SIDE NAV AND THE DROPDOWNS INSIDE -->
+    <ul id="dropdown2" class="dropdown-content">
+      <li><a href="task_list.html">Task List</a></li>
+      <li><a href="trendy_phrases.html">Trendy Phrases</a></li>
+      <!-- <li class="divider"></li>
+              <li><a href="#!">three</a></li> -->
+    </ul>
+    <ul class="sidenav" id="mobile-demo">
+      <li><a href="index.html">HOME</a></li>
+      <!-- Dropdown Trigger -->
+      <li>
+        <a class="dropdown-trigger" href="#!" data-target="dropdown2"
+          >VANILLA JS<i class="material-icons right">arrow_drop_down</i></a
+        >
+      </li>
+    </ul>
+
+    <div class="message"><h3>Press the keys!</h3></div>
+    <div class="keys">
+      <div data-key="89" class="key">
+        <kbd>y</kbd> <span class="sound">yassss</span>
+      </div>
+      <div data-key="78" class="key">
+        <kbd>n</kbd> <span class="sound">nope</span>
+      </div>
+      <div data-key="84" class="key">
+        <kbd>t</kbd> <span class="sound">triggered</span>
+      </div>
+      <div data-key="68" class="key">
+        <kbd>d</kbd> <span class="sound">dope</span>
+      </div>
+      <div data-key="71" class="key">
+        <kbd>g</kbd> <span class="sound">go</span>
+      </div>
+      <div data-key="70" class="key">
+        <kbd>f</kbd> <span class="sound">foreal</span>
+      </div>
+      <div data-key="67" class="key">
+        <kbd>c</kbd> <span class="sound">cringy</span>
+      </div>
+      <div data-key="75" class="key">
+        <kbd>k</kbd> <span class="sound">kindness</span>
+      </div>
+      <div data-key="76" class="key">
+        <kbd>l</kbd> <span class="sound">love</span>
+      </div>
+      <div data-key="80" class="key">
+        <kbd>p</kbd> <span class="sound">periodt</span>
+      </div>
+    </div>
+
+    <audio data-key="89" src="sounds/yassss.wav"></audio>
+    <audio data-key="78" src="sounds/nope.wav"></audio>
+    <audio data-key="84" src="sounds/triggered.wav"></audio>
+    <audio data-key="68" src="sounds/dope.wav"></audio>
+    <audio data-key="71" src="sounds/go.wav"></audio>
+    <audio data-key="70" src="sounds/foreal.wav"></audio>
+    <audio data-key="67" src="sounds/cringy.wav"></audio>
+    <audio data-key="75" src="sounds/kindness.wav"></audio>
+    <audio data-key="76" src="sounds/love.wav"></audio>
+    <audio data-key="80" src="sounds/periodt.wav"></audio>
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+      // Specific to app
+      function removeTransition(e) {
+        if (e.propertyName !== 'transform') return;
+        e.target.classList.remove('playing');
+      }
+
+      function playSound(e) {
+        const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+        const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
+        if (!audio) return;
+
+        key.classList.add('playing');
+        audio.currentTime = 0;
+        audio.play();
+      }
+
+      const keys = Array.from(document.querySelectorAll('.key'));
+      keys.forEach(key =>
+        key.addEventListener('transitionend', removeTransition)
+      );
+      window.addEventListener('keydown', playSound);
+    </script>
+    <script>
+      // For Materialize
+      $(document).ready(function() {
+        // dropdown links in main desktop nav
+        $('.dropdown-trigger').dropdown();
+        // sidenav
+        $('.sidenav').sidenav();
+      });
+    </script>
+  </body>
+</html>

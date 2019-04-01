@@ -1,0 +1,11 @@
+{
+  "name": "javascript_projects",
+  "version": "1.0.0",
+  "description": "a home for all my javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kathy Cuevas",
+  "license": "MIT"
+}
